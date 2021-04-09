@@ -1,5 +1,6 @@
 package Lesson2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Task3 {
@@ -9,16 +10,28 @@ public class Task3 {
     // Вывести полученное число
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int i = sc.nextInt();
-        if (i == 0) {
-            i = 10;
-        } else if (i > 0) {
-            i += 1;
-        } else if (i < 0) {
-            i -= 2;
-        } else {
-            System.out.println("you input incorrect number");
+        int i = 0;
+        while (true) {
+            try {
+                i = sc.nextInt();
+
+                if (i == 0) {
+                    i = 10;
+                } else if (i > 0) {
+                    i += 1;
+                } else if (i < 0) {
+                    i -= 2;
+                } else {
+                    System.out.println("you input incorrect number");
+                }
+                System.out.println(i);
+            } catch (InputMismatchException exception) {
+                System.out.println("Not an integer, please try again. Press enter key to exit");
+                if (sc.next().isEmpty()) {
+                    break;
+                }
+            }
         }
-        System.out.println(i);
+        sc.close();
     }
 }

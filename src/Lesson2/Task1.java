@@ -12,9 +12,6 @@ public class Task1 {
         System.out.println("Please enter number!");
         Scanner sc = new Scanner(System.in);
         int i = sc.nextInt();
-        if (i == 0) {
-            System.out.println("you entered zero");
-        }
         if (i != 0) {
             if (i > 0) {
                 System.out.print("its positive");
@@ -29,6 +26,8 @@ public class Task1 {
             } else {
                 System.out.println(" one digit number");
             }
+        } else {
+            System.out.println("you entered zero");
         }
     }
 }

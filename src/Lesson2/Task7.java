@@ -11,7 +11,9 @@ public class Task7 {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int dev = Integer.parseInt(reader.readLine());
-        if (dev < 3) {
+        if (dev == 1) {
+            System.out.println(dev + " программист");
+        }else if (dev <= 4) {
             System.out.println(dev + " программиста");
         } else {
             System.out.println(dev + " программистов");
